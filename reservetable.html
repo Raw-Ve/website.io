@@ -1,0 +1,167 @@
+<html>
+<Head>
+	<title>Reservation</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" 
+	rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript">
+		function submitReservation(event) {
+  event.preventDefault();
+
+  // Get form values
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+
+  // Send reservation data to the server (not implemented in this example)
+  // You can use AJAX, fetch, or any other method to send the data to your server
+
+  // Display reservation status
+  const statusMessage = document.getElementById('statusMessage');
+  statusMessage.textContent = `Reservation confirmed for ${name} on ${date} at ${time}.`;
+  document.getElementById('reservationForm').style.display = 'none';
+  document.getElementById('reservationStatus').style.display = 'block';
+}
+
+	</script>
+</Head>
+<body>
+	<div class="header">
+	<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<a href="index.html"><img src="img/Blacklogo.png" width="125px"></a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="foodmenu.html">Food Menu</a></li>
+				<li><a href="reservetable.html">Reserve Table</a></li>
+				<li><a href="aboutus.html">About us</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+				<li><p class="btn-login">Login</p></li>
+			</ul>
+		</nav>
+		<a href="cart.html"><img src="img/cart.png" width="40px" height="40px"> </a>
+
+	</div>	
+</div>
+</div><br><br>
+<!-----------reservation page--------->
+<div class="Retable">
+  <h1>Table Reservation</h1><br><br>
+  <div class="reserve">
+	<img src="img/reserverestro.jpg" id="timg">
+</div>
+  
+
+  <div id="reservationForm">
+  	 <h2>Make a Reservation</h2>
+    <form id="reservationForm" onsubmit="submitReservation(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="example@gmail.com" required>
+      <label for="date">Number of People:</label>
+      <input type="number" id="number" required>
+
+       <label for="date">Table Number:</label>
+      <input type="text" id="table" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" required >
+
+      <input type="submit" value="Reserve">
+    </form>
+  </div>
+ </div>
+<!----Login------>
+<div class="overlay" onclick="closeModal()"> 
+	
+</div>
+<div class="loginform">
+	<span>&times;</span>
+	<form action="">
+		<div>
+			<h3 class="ltitle">Login Now</h3><br>
+			<label>Email</label>
+			<input type="Email" placeholder="example@gmail.com" name="" required />
+		</div>
+		<div>
+			<label>Password</label>
+			<input type="Password " name=""required/>
+		</div>
+		<button class="lbt">Login</button>
+	</form>
+</div>
+<script type="text/javascript">
+	function showModal() {
+		document.querySelector('.overlay').classList.add('showoverlay');
+		document.querySelector('.loginform').classList.add('showloginform');
+		
+	}
+	function closeModal() {
+		document.querySelector('.overlay').classList.remove('showoverlay');
+		document.querySelector('.loginform').classList.remove('showloginform');
+		
+	}
+	var btnlogin=document.querySelector(".btn-login");
+	btnlogin.addEventListener("click",showModal);
+
+	var c=document.querySelector("span");
+	c.addEventListener("click",closeModal);
+</script>
+
+<!-------Offer-------->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3>Download Our App</h3>
+        <p>Download App For Android and ios mobile phone </p>
+        <div class="app-logo">
+          <img src="img/play-store.png">
+          <img src="img/app-store.png">
+        </div>
+      </div>
+      <div class="footer-col-2">
+        <a href="index.html"><img src="img/White-Logo.png" width="125px"></a>
+        <p></p>
+      </div>
+      <div class="footer-col-4">
+        <h3>Follow Us</h3>
+        <ul>
+         			 <li><a href="https://www.facebook.com" >Facebook</a></li>
+					<li><a href="https://www.instagram.com">Instagram</li>
+					<li><a href="https://www.twitter.com">Twitter</li>
+        </ul>
+        
+      </div>
+    </div>
+    <hr>
+    <p class="Copyright">Copyright 2023 - Food Online</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>	
+
